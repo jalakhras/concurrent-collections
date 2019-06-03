@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace concurrent_collections
 {
@@ -10,12 +8,21 @@ namespace concurrent_collections
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            var orders = new Queue<string>();
+            PlaceOrders(orders, "Mark");
+            PlaceOrders(orders, "Ramdevi");
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            foreach (string order in orders)
+                Console.WriteLine("ORDER: " + order);
+        }
+        static void PlaceOrders(Queue<string> orders, string customerName)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Thread.Sleep(1);
+                string orderName = string.Format("{0} wants t-shirt {1}", customerName, i + 1);
+                orders.Enqueue(orderName);
+            }
         }
     }
 }
