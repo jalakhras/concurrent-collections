@@ -15,7 +15,7 @@ namespace BasicDictionaryOps
 
             UpdateMethods(stock);
 
-            Console.WriteLine(string.Format("stock[JMA] = {0}", stock.GetOrAdd("JMA", 0)));
+            GetMethods(stock);
 
             RemoveMethods(stock);
 
@@ -59,6 +59,15 @@ namespace BasicDictionaryOps
             Console.WriteLine(string.Format("\r\nstock[JMA] = {0}", stock["JMA"]));
             var success = stock.TryRemove("jDays", out int jDaysValue);
             Console.WriteLine("Value removed was : " + jDaysValue);
+        }
+        static void GetMethods(ConcurrentDictionary<string, int> stock)
+        {
+           // int psStock1 = stock["JMA"];
+            //Or
+          //  bool success = stock.TryGetValue("JMA" , out int psStock);
+            //Or
+            Console.WriteLine(string.Format("stock[JMA] = {0}", stock.GetOrAdd("JMA", 0)));
+
         }
     }
 }
