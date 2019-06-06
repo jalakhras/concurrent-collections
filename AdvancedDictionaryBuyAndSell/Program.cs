@@ -1,21 +1,27 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AdvancedDictionaryBuyAndSell
 {
     class Program
     {
+        public static readonly List<string> AllShirtNames =
+            new List<string> { "technologyhour", "Code School", "jDays", "buddhistgeeks", "iGeek" };
+
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            StockController controller = new StockController();
+            TimeSpan workDay = new TimeSpan(0, 0, 2);
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            Task t1 = Task.Run(() => new SalesPerson("Sahil").Work(controller, workDay));
+            Task t2 = Task.Run(() => new SalesPerson("Peter").Work(controller, workDay));
+            Task t3 = Task.Run(() => new SalesPerson("Juliette").Work(controller, workDay));
+            Task t4 = Task.Run(() => new SalesPerson("Xavier").Work(controller, workDay));
+
+            Task.WaitAll(t1, t2, t3, t4);
+            controller.DisplayStatus();
         }
+
     }
 }
