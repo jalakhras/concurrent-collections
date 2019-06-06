@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "concurrent-collections", "c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicDictionaryOps", "BasicDictionaryOps\BasicDictionaryOps.csproj", "{D4236236-85DF-40F0-AA71-C17B9E9E48E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedDictionaryBuyAndSell", "AdvancedDictionaryBuyAndSell\AdvancedDictionaryBuyAndSell.csproj", "{760AEFBD-6DA1-40CE-A61D-8CED3C08D130}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D4236236-85DF-40F0-AA71-C17B9E9E48E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4236236-85DF-40F0-AA71-C17B9E9E48E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4236236-85DF-40F0-AA71-C17B9E9E48E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760AEFBD-6DA1-40CE-A61D-8CED3C08D130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760AEFBD-6DA1-40CE-A61D-8CED3C08D130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760AEFBD-6DA1-40CE-A61D-8CED3C08D130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760AEFBD-6DA1-40CE-A61D-8CED3C08D130}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
