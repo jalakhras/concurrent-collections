@@ -18,19 +18,19 @@ namespace AdvancedDictionaryBuyAndSell
             DateTime start = DateTime.Now;
             while (DateTime.Now - start < workDay)
             {
-                Thread.Sleep(rand.Next(100));
+                //Thread.Sleep(rand.Next(100));
                 bool buy = (rand.Next(6) == 0);
                 string itemName = Program.AllShirtNames[rand.Next(Program.AllShirtNames.Count)];
                 if (buy)
                 {
                     int quantity = rand.Next(9) + 1;
                     stockController.BuyStock(itemName, quantity);
-                    DisplayPurchase(itemName, quantity);
+                    //DisplayPurchase(itemName, quantity);
                 }
                 else
                 {
                     bool success = stockController.TrySellItem(itemName);
-                    DisplaySaleAttempt(success, itemName);
+                    //DisplaySaleAttempt(success, itemName);
                 }
             }
             Console.WriteLine("SalesPerson {0} signing off", this.Name);
