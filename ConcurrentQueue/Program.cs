@@ -16,6 +16,8 @@ namespace ConcurrentQueue
             DemoConcurrentStack();
             Console.WriteLine("****************");
             DemoConcurrentBag();
+            Console.WriteLine("****************");
+            DemoInterface();
         }
 
         private static void DemoConcurrentQueue()
@@ -105,6 +107,30 @@ namespace ConcurrentQueue
 
             Console.WriteLine("\r\nAfter enumerating, count = " + shirts.Count.ToString());
         }
+        private static void DemoInterface()
+        {
+            // can change this to concurrent stack or bag
+            IProducerConsumerCollection<string> shirts = new ConcurrentQueue<string>();
+            shirts.TryAdd("Pluralsight");
+            shirts.TryAdd("WordPress");
+            shirts.TryAdd("Code School");
+
+            Console.WriteLine("After enqueuing, count = " + shirts.Count.ToString());
+
+            string item1; // = shirts.Dequeue();
+            bool success = shirts.TryTake(out item1);
+            if (success)
+                Console.WriteLine("\r\nRemoving " + item1);
+            else
+                Console.WriteLine("queue was empty");
+
+            Console.WriteLine("\r\nEnumerating:");
+            foreach (string item in shirts)
+                Console.WriteLine(item);
+
+            Console.WriteLine("\r\nAfter enumerating, count = " + shirts.Count.ToString());
+        }
+
 
 
 
